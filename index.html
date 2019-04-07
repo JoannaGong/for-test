@@ -8,14 +8,17 @@
 </head>
 <body>
     <h3>page index</h3>
-    <button class="btn">点击 index</button>
+    <button class="btn">点击 index</button><br><br>
+    <div class="content"></div>
     
     <script>
         var a = 'index 123';
         var oBtn = document.getElementsByClassName("btn")[0];
+        var content = document.getElementsByClassName("content")[0];
 
         window.addEventListener("message", function(messageEvent){
-            console.log(messageEvent.data)
+            content.innerText = messageEvent.data;
+            // console.log(messageEvent.data);
         })
 
         oBtn.onclick = function(){
