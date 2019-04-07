@@ -8,12 +8,19 @@
 </head>
 <body>
     <h3>page index</h3>
+    <button class="btn">点击 index</button>
     
     <script>
         var a = 123;
+        var oBtn = document.getElementsByClassName("btn")[0];
+
         window.addEventListener("message", function(messageEvent){
             console.log(messageEvent.data)
         })
+
+        oBtn.onclick = function(){
+            parent.postMessage(a, 'http://localhost')
+        }
     </script>
 </body>
 </html>
